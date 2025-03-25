@@ -18,13 +18,12 @@ RUN mkdir -p /var/run/php-fpm && \
     mkdir -p /run/nginx && \
     mkdir -p /var/log/nginx && \
     mkdir -p /var/lib/nginx && \
-    mkdir -p /etc/ssl/certs && \
-    mkdir -p /etc/ssl/private && \
+    mkdir -p /home/appuser/ssl && \
     chown -R 1000:1000 /var/run/php-fpm && \
     chown -R 1000:1000 /usr/share/nginx/html && \
     chown -R 1000:1000 /var/log/nginx && \
     chown -R 1000:1000 /var/lib/nginx && \
-    chown -R 1000:1000 /etc/ssl && \
+    chown -R 1000:1000 /home/appuser/ssl && \
     chown -R 1000:1000 /run/nginx && \
     chown -R 1000:1000 /etc/nginx
 
@@ -33,4 +32,4 @@ USER 1000:1000
 
 EXPOSE 80 443
 
-CMD ["/bin/sh", "-c", "openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj '/CN=localhost' && php-fpm -D && nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /home/appuser/ssl/nginx-selfsigned.key -out /home/appuser/ssl/nginx-selfsigned.crt -subj '/CN=localhost' && php-fpm -D && nginx -g 'daemon off;'"]
