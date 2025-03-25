@@ -1,5 +1,5 @@
 # hello-world-nginx-self-signed
-Nginx container that generates a self-signed cert on start-up and serves Hello world on 80/443.
+Nginx container that generates a self-signed cert on start-up and serves Hello world on 80/443, with PHP installed to show all request headers.
 
 # How to use
 
