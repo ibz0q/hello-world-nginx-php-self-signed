@@ -4,4 +4,3 @@ Nginx container that generates a self-signed cert on start-up and serves Hello w
 # How to use
 
 `docker run -d -p 80:80 -p 443:443 ibz0q/hello-world-nginx-php-self-signed`
-
