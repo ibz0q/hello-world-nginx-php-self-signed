@@ -48,12 +48,5 @@ class DumpHTTPRequestToFile {
 ?>
 </pre>
 
-All environment variables:	
-<pre>
-<?php
-print_r($_ENV);
-?>
-</pre>
-
 </body>
 </html>
