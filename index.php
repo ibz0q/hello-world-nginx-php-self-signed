@@ -6,7 +6,7 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h1>Hello World! (with Request Headers)</h1>
+    <h2>Hello World! (with Request Headers)</h2>
 
 Request body:
 <pre>
@@ -30,12 +30,9 @@ class DumpHTTPRequest {
 		$headerList = [];
 		foreach ($_SERVER as $name => $value) {
 			if (preg_match('/^HTTP_/',$name)) {
-				// convert HTTP_HEADER_NAME to Header-Name
 				$name = strtr(substr($name,5),'_',' ');
 				$name = ucwords(strtolower($name));
 				$name = strtr($name,' ','-');
-
-				// add to list
 				$headerList[$name] = $value;
 			}
 		}
