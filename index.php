@@ -6,12 +6,12 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h1>Hello World! (with Headers and Environment Variables)</h1>
+    <h1>Hello World! (with Request Headers)</h1>
 
 Request body:
 <pre>
 <?php
-class DumpHTTPRequestToFile {
+class DumpHTTPRequest {
 	public function execute() {
 		$data = sprintf(
 			$_SERVER['REQUEST_METHOD'],
@@ -44,7 +44,7 @@ class DumpHTTPRequestToFile {
 	}
 }
 
-(new DumpHTTPRequestToFile)->execute();
+(new DumpHTTPRequest)->execute();
 ?>
 </pre>
 
