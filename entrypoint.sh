@@ -6,9 +6,9 @@ mkdir -p /etc/ssl/certs /etc/ssl/private
 CN=${CERT_CN:-localhost}
 
 if [ "$CN" = "localhost" ]; then
-    echo "No CERT_CN specified. Defaulting to CN=localhost."
+    echo "No CERT_CN specified. Defaulting to CN=localhost." >&1
 else
-    echo "Using specified CERT_CN: CN=$CN."
+    echo "Using specified CERT_CN: CN=$CN." >&1
 fi
 
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
