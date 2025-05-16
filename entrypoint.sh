@@ -2,10 +2,19 @@
 
 mkdir -p /etc/ssl/certs /etc/ssl/private
 
+# Set the CN to the value of the environment variable or default to "localhost"
+CN=${CERT_CN:-localhost}
+
+if [ "$CN" = "localhost" ]; then
+    echo "No CERT_CN specified. Defaulting to CN=localhost."
+else
+    echo "Using specified CERT_CN: CN=$CN."
+fi
+
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -keyout /etc/ssl/private/nginx-selfsigned.key \
     -out /etc/ssl/certs/nginx-selfsigned.crt \
-    -subj "/CN=localhost"
+    -subj "/CN=$CN"
 
 php-fpm -D
 
