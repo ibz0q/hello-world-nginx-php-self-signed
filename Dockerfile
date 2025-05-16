@@ -8,6 +8,8 @@ COPY index.php /usr/share/nginx/html/index.php
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN chmod +x /entrypoint.sh
+
 RUN mkdir -p /var/run/php-fpm
 
 EXPOSE 80 443
