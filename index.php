@@ -6,9 +6,9 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h2>Hello World! (with Request Headers)</h2>
+    <h3>Hello World! (and Request Headers)</h3>
 
-Client Request:
+Request:
 <pre>
 <?php
 class DumpHTTPRequest {
@@ -45,8 +45,7 @@ class DumpHTTPRequest {
 ?>
 </pre>
 
-
-Server Vars:
+PHP Server Variables:
 <pre>
 <?php
 
