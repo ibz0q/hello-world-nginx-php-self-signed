@@ -8,7 +8,7 @@
 <body>
     <h2>Hello World! (with Request Headers)</h2>
 
-Request body:
+Client Request:
 <pre>
 <?php
 class DumpHTTPRequest {
@@ -42,6 +42,16 @@ class DumpHTTPRequest {
 }
 
 (new DumpHTTPRequest)->execute();
+?>
+</pre>
+
+
+Server Vars:
+<pre>
+<?php
+
+print_r($_SERVER);
+
 ?>
 </pre>
 
